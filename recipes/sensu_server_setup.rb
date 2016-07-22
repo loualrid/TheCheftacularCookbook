@@ -11,7 +11,7 @@ include_recipe "sensu::rabbitmq"
 
 include_recipe "sensu::redis"
 
-node.set['uchiwa']['version'] = '0.12.1-1'
+node.set['uchiwa']['version'] = '0.8.1-1'
 node.set['uchiwa']['settings']['user']    = node['TheCheftacularCookbook']['sensu']['uchiwa_http_basic_username']
 node.set['uchiwa']['settings']['pass']    = Chef::EncryptedDataBagItem.load( node.chef_environment, 'chef_passwords', node['secret'])["uchiwa_pass"]
 node.set['uchiwa']['settings']['refresh'] = 10000
